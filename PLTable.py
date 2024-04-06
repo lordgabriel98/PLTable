@@ -16,3 +16,5 @@ df["Pos"] = df["Pos"].apply(lambda x: x[:2])
 
 print(df)
 
+
+#YNWA
