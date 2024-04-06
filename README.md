@@ -31,7 +31,7 @@ cd PLTable
 pip install -r requirements.txt
 ```
 ## Usage
----
+
 1. Run the script.
 ```bash
 python3 PLTable.py
