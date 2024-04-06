@@ -1,20 +1,20 @@
 # Premier League Table web scraper
----
+
 
 ## Overview
----
+
 
 A Python program to web scrape the Premier League table to the Linux terminal.
 
 ## Features
----
+
 
 - Scrapes the latest Premier League table standings.
 - Retrieves team names, positions, points, and other relevant information.
 - Simple and easy-to-use API for fetching Premier League table data.
 
 ## Installation
----
+
 1. Clone the repository:
 
 ```bash
