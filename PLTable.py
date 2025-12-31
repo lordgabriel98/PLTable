@@ -2,23 +2,26 @@
 import requests    # to get website content
 from bs4 import BeautifulSoup  # to traverse the website's html
 import pandas as pd # to convert the html to a dataframe
+#from selenium import webdriver
+#from selenium.webdriver.common.by #import By
 
-url = 'https://www.premierleague.com/'
-try:
-    page = requests.get(url)
-    soup = BeautifulSoup(page.text, 'html.parser')
-    table = soup.find('div', {'class': 'tablesContainer'})
-    
-    if(table):
-        rows = table.find_all('tr')
-        df = pd.read_html(str(table))[0]
-        df.set_index("Pos", inplace=True)
-        print(df)
-    else:
-        print("Resource could not be scraped from website.")
+api = 'https://sdp-prem-prod.premier-league-prod.pulselive.com/api/v5/competitions/8/seasons/2025/standings?live=false'
+
+results = requests.get(api)
+
+api_data = results.json()
+
+table = []
+
+for data in api_data['tables']:
+    for entry in data['entries']:
+        team_data = entry['overall']
+        del team_data['startingPosition']
+        team_name = entry['team']
         
-except requests.exceptions.RequestException as e:
-    print("Request error: ", e)
+
+        print('team name',team_name['shortName'])
+        print('team data',team_data)
 
 
 #YNWA
