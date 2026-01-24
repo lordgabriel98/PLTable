@@ -11,17 +11,20 @@ results = requests.get(api)
 
 api_data = results.json()
 
-table = []
+team_names = []
+
+team_positions = []
 
 for data in api_data['tables']:
     for entry in data['entries']:
         team_data = entry['overall']
         del team_data['startingPosition']
         team_name = entry['team']
-        
+        team_names.append(team_name['name'])
+        team_positions.append(team_data['position']) 
 
-        print('team name',team_name['shortName'])
-        print('team data',team_data)
+table = pd.DataFrame({"Club": team_names, "Position": team_positions})
 
+print(table)
 
 #YNWA
