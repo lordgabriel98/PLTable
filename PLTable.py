@@ -21,15 +21,32 @@ goals_against = []
 
 goal_diff =[]
 
+played = []
+
+points = []
+
+won = []
+
+drawn = []
+
+lost = []
+
 for data in api_data['tables']:
+    
     for entry in data['entries']:
         team_data = entry['overall']
         del team_data['startingPosition']
         team_name = entry['team']
         team_names.append(team_name['name'])
-        team_positions.append(team_data['position']) 
+        team_positions.append(team_data['position'])
+        points.append(team_data['points'])
+        played.append(team_data['played'])
+        won.append(team_data['won'])
+        drawn.append(team_data['drawn'])
+        lost.append(team_data['lost'])
 
-table = pd.DataFrame({"Position": team_positions, "Club": team_names})
+table = pd.DataFrame({"Position": team_positions, "Club": team_names, 'Points': points, 'Played': played,
+                      "Won": won, "Draws": drawn, "Lost": lost})
 table.set_index('Position', inplace=True)
 print(table)
 
