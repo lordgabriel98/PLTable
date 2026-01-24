@@ -15,12 +15,6 @@ team_names = []
 
 team_positions = []
 
-goals_for =[]
-
-goals_against = []
-
-goal_diff =[]
-
 played = []
 
 points = []
