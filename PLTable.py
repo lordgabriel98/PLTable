@@ -15,6 +15,12 @@ team_names = []
 
 team_positions = []
 
+goals_for =[]
+
+goals_against = []
+
+goal_diff =[]
+
 for data in api_data['tables']:
     for entry in data['entries']:
         team_data = entry['overall']
@@ -23,8 +29,8 @@ for data in api_data['tables']:
         team_names.append(team_name['name'])
         team_positions.append(team_data['position']) 
 
-table = pd.DataFrame({"Club": team_names, "Position": team_positions})
-
+table = pd.DataFrame({"Position": team_positions, "Club": team_names})
+table.set_index('Position', inplace=True)
 print(table)
 
 #YNWA
