@@ -4,7 +4,7 @@
 ## Overview
 
 
-A Python program to web scrape the Premier League table to the Linux terminal.
+A Python program to fetch the Premier League table to the Linux terminal.
 
 ## Features
 
