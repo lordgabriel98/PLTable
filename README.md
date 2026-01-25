@@ -1,4 +1,4 @@
-# Premier League Table web scraper
+# Premier League Table fetcher
 
 
 ## Overview
@@ -9,7 +9,7 @@ A Python program to fetch the Premier League table to the Linux terminal.
 ## Features
 
 
-- Scrapes the latest Premier League table standings.
+- Fetches the latest Premier League table standings.
 - Retrieves team names, positions, points, and other relevant information.
 - Simple and easy-to-use API for fetching Premier League table data.
 
