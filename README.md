@@ -1,4 +1,4 @@
-# Premier League Table fetcher
+# Premier League Table Fetcher
 
 
 ## Overview
