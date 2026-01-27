@@ -7,19 +7,9 @@ import pandas as pd # to convert the html to a dataframe
 
 api = 'https://sdp-prem-prod.premier-league-prod.pulselive.com/api/v5/competitions/8/seasons/2025/standings?live=false'
 
-team_names = []
+team_names, team_positions = [], []
 
-team_positions = []
-
-played = []
-
-points = []
-
-won = []
-
-drawn = []
-
-lost = []
+points, won, drawn, lost, played = [], [], [], [], []
 
 try:
     results = requests.get(api)
