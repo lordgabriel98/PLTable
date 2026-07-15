@@ -3,7 +3,7 @@ import requests    # to get website content
 from bs4 import BeautifulSoup  # to traverse the website's html
 import pandas as pd # to convert the html to a dataframe
 
-api = 'https://sdp-prem-prod.premier-league-prod.pulselive.com/api/v5/competitions/8/seasons/2025/standings?live=false'
+api = 'https://sdp-prem-prod.premier-league-prod.pulselive.com/api/v5/competitions/8/seasons/2026/standings?live=false'
 
 team_names, team_positions = [], []
 
@@ -30,7 +30,7 @@ try:
     table = pd.DataFrame({"Position": team_positions, "Club": team_names, 'Points': points, 'Played': played,
                         "Won": won, "Draws": drawn, "Lost": lost})
     table.set_index('Position', inplace=True)
-    print(table)
+    print(table.sort_values(by='Position'))
 
 except requests.exceptions.ConnectionError:
     print("Please check your Internet connection.")
